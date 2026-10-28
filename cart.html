@@ -1,0 +1,154 @@
+
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Giỏ hàng | POPPOP</title>
+
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/pages.css">
+
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Playfair+Display:wght@800;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css">
+</head>
+
+<body class="poppop-page cart-page">
+
+  
+  <div class="topline">
+    PHONG CÁCH RIÊNG — TỰ TIN THỂ HIỆN CHẤT CỦA BẠN
+  </div>
+
+
+  <header class="site-header">
+    <a href="index.HTML">
+      <div class="brand">POPPOP</div>
+      <div class="tagline">FASHION · EVERYDAY · YOUR STYLE</div>
+    </a>
+
+    <nav class="nav">
+      <a href="index.HTML">TRANG CHỦ</a>
+      <a href="gioi-thieu.html">GIỚI THIỆU</a>
+      <a href="san-pham.html">SẢN PHẨM</a>
+      <a href="tin-tuc.html">TIN TỨC</a>
+      <a href="cart.html" class="active">
+        <i class="fa-solid fa-bag-shopping"></i>
+        GIỎ HÀNG
+      </a>
+    </nav>
+  </header>
+
+ 
+  <section class="page-hero cart-hero">
+    <div class="eyebrow">YOUR SELECTION</div>
+    <h1>Giỏ hàng của bạn</h1>
+    <p>
+      Kiểm tra những món đồ bạn đã chọn
+      trước khi tiếp tục mua sắm.
+    </p>
+  </section>
+
+
+  <main class="wrap cart-wrap">
+
+  
+    <div class="cart-heading">
+      <div>
+        <div class="eyebrow">SHOPPING BAG</div>
+        <h2>Thông tin giỏ hàng</h2>
+      </div>
+
+      <a href="san-pham.html" class="continue-shopping">
+        <i class="fa-solid fa-arrow-left"></i>
+        Tiếp tục mua sắm
+      </a>
+    </div>
+
+ 
+    <div class="cart-table-shell">
+      <table class="cart-table">
+        <thead>
+          <tr>
+            <th>STT</th>
+            <th>Sản phẩm</th>
+            <th>Hình ảnh</th>
+            <th>Số lượng</th>
+            <th>Đơn giá</th>
+            <th>Thành tiền</th>
+            <th>Thao tác</th>
+          </tr>
+        </thead>
+
+      
+        <tbody id="addCart"></tbody>
+
+    
+        <tfoot>
+          <tr>
+            <td colspan="5" class="total-label">
+              Tổng thành tiền
+            </td>
+
+            <td id="tongtien" class="total-value">
+              
+            </td>
+
+            <td>VNĐ</td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+
+ 
+    <div class="cart-bottom-note">
+      <i class="fa-solid fa-truck-fast"></i>
+      <span>
+        Hãy kiểm tra kỹ sản phẩm và số lượng
+        trước khi hoàn tất đơn hàng.
+      </span>
+    </div>
+
+ 
+    <section class="cart-recommendations">
+      <div class="section-head">
+        <div class="eyebrow">KEEP EXPLORING</div>
+        <h2>Có thể bạn cũng thích</h2>
+        <p>
+          Khám phá thêm các thiết kế POPPOP
+          được yêu thích.
+        </p>
+      </div>
+
+
+      <div class="row cart-products" id="productAll">
+
+        
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <strong>POPPOP</strong>
+
+    <p>
+      Thời trang thường ngày, dấu ấn của riêng bạn.<br>
+      Đơn giản · Cá tính · Khác biệt
+    </p>
+
+    <small>© POPPOP — Fashion & Accessories</small>
+  </footer>
+
+
+  <script src="js/code.js"></script>
+  <script src="js/cart.js"></script>
+
+</body>
+</html>

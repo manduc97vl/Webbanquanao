@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chi tiết sản phẩm | POPPOP</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css">
+</head>
+<body class="poppop-page">
+  <div class="topline">PHONG CÁCH RIÊNG — TỰ TIN THỂ HIỆN CHẤT CỦA BẠN</div>
+  <header class="site-header">
+    <a href="index.HTML"><div class="brand">POPPOP</div><div class="tagline">FASHION · EVERYDAY · YOUR STYLE</div></a>
+    <nav class="nav">
+      <a href="index.HTML">TRANG CHỦ</a>
+      <a href="gioi-thieu.html">GIỚI THIỆU</a>
+      <a href="san-pham.html" class="active">SẢN PHẨM</a>
+      <a href="tin-tuc.html">TIN TỨC</a>
+      <a href="cart.html"><i class="fa-solid fa-bag-shopping"></i> GIỎ HÀNG</a>
+    </nav>
+  </header>
+
+  <section class="page-hero detail-hero">
+    <div class="eyebrow">POPPOP COLLECTION</div>
+    <h1>Chi tiết sản phẩm</h1>
+    <p>Khám phá thiết kế, chất liệu và phong cách phù hợp với bạn.</p>
+  </section>
+
+  <main class="wrap">
+    <div class="detail-layout">
+      <section class="detail-gallery">
+        <div class="detail-main-image"><img src="images/full_set__2__1ad21086311a49fc98d9c533d4d944fc_grande.webp" alt="Hình ảnh sản phẩm" id="hinh"></div>
+        <div class="detail-thumbnails">
+          <div class="frame"><img src="images/ao_tay_dai_den_dt2_a8b1db91ef16448692ab9a0d606a86fa_grande.webp" alt="Ảnh sản phẩm phụ" id="hinh1"></div>
+          <div class="frame"><img src="images/qqq.webp" alt="Ảnh sản phẩm phụ"></div>
+          <div class="frame"><img src="images/xxx.webp" alt="Ảnh sản phẩm phụ"></div>
+        </div>
+      </section>
+      <section class="detail-info">
+        <div class="eyebrow">DESIGNED FOR EVERYDAY</div>
+        <div class="row" id="ten"><h1 id="tensp">Sản phẩm POPPOP</h1></div>
+        <div class="detail-price row"><h2 id="gia"></h2></div>
+        <p class="detail-description">Thiết kế mang tinh thần streetwear hiện đại, dễ phối cùng những món đồ thường ngày. Chọn kích cỡ phù hợp và hoàn thiện phong cách của riêng bạn.</p>
+        <div class="detail-option-label">CHỌN KÍCH CỠ</div>
+        <div class="detail-sizes row">
+          <div class="c"><p>S</p></div><div class="c"><p>M</p></div><div class="c"><p>L</p></div>
+        </div>
+        <div class="detail-actions">
+          <a class="btn-buy" href="cart.html"><i class="fa-solid fa-bag-shopping"></i> Buy Now</a>
+          <a class="btn-detail" href="san-pham.html">Quay lại sản phẩm</a>
+        </div>
+        <div class="detail-perks"><p><i class="fa-solid fa-box"></i> Đóng gói cẩn thận</p><p><i class="fa-solid fa-shirt"></i> Phong cách POPPOP</p><p><i class="fa-solid fa-heart"></i> Dành cho chất riêng của bạn</p></div>
+      </section>
+    </div>
+
+    <section class="related-section">
+      <div class="section-head"><div class="eyebrow">YOU MAY ALSO LIKE</div><h2>Sản phẩm tương tự</h2><p>Thêm lựa chọn để hoàn thiện outfit của bạn.</p></div>
+      <div id="sptt" class="row related-products"></div>
+    </section>
+  </main>
+
+  <footer class="footer"><strong>POPPOP</strong><p>Thời trang thường ngày, dấu ấn của riêng bạn.<br>Đơn giản · Cá tính · Khác biệt</p><small>© POPPOP — Fashion & Accessories</small></footer>
+
+  <script src="js/code.js"></script>
+  <script src="js/index.js"></script>
+  <script>
+  // Lấy id sản phẩm từ URL
+  let currentUrl = window.location.href;
+  let url = new URL(currentUrl);
+  let id = url.searchParams.get("id");
+
+  // Tìm sản phẩm trong danh sách ds
+  let item = ds.find(a => a.id === Number(id));
+
+  if (item) {
+    document.getElementById("hinh").src = `images/${item.hinh}`;
+    document.getElementById("tensp").innerText = item.ten;
+    document.getElementById("gia").innerText = "Giá: " + Number(item.gia).toLocaleString("vi-VN") + " VNĐ";
+  } else {
+    document.getElementById("tensp").innerText = "Không tìm thấy sản phẩm";
+  }
+  </script>
+  <script>
+  let loai = item.loai;
+  let sptt = ds.filter(sp => sp.loai === loai && sp.id !== item.id);
+  for (let i = 0; i < sptt.length; i++) {
+    document.getElementById("sptt").innerHTML += `
+      <article class="col3 related-card">
+        <img src="images/${sptt[i].hinh}" alt="${sptt[i].ten}">
+        <h3>${sptt[i].ten}</h3>
+        <p class="related-price">${Number(sptt[i].gia).toLocaleString("vi-VN")} VNĐ</p>
+        <button class="btn-detail" onclick="detail(${sptt[i].id})">Chi tiết</button>
+      </article>`;
+  }
+  </script>
+</body>
+</html>

@@ -1,0 +1,427 @@
+  <!DOCTYPE html>
+  <html lang="vi">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Poppop – Thời trang & Phụ kiện</title>
+    <link rel="stylesheet" href="css/style_pophihi.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Playfair+Display:wght@800;900&display=swap"
+      rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" />
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+
+  </head>
+
+  <body>
+
+    <div class="auth-actions">
+      <button type="button" id="btnMoLogin">Đăng nhập</button>
+      <button type="button" id="btnMoDangKy">Đăng ký</button>
+    </div>
+    
+ 
+    <div id="authOverlay">
+      <div id="login" class="auth-form">
+        <button type="button" class="btnDong" aria-label="Đóng">×</button>
+        <h2>Đăng nhập</h2>
+        <form id="formLogin">
+          <label for="loginTk">Tài khoản</label>
+          <input type="text" id="loginTk" placeholder="Nhập tài khoản">
+    
+          <label for="loginMk">Mật khẩu</label>
+          <input type="password" id="loginMk" placeholder="Nhập mật khẩu">
+    
+          <button type="submit" class="btnChinh">Đăng nhập</button>
+        </form>
+        <p>Chưa có tài khoản? <a href="#" id="sangDangKy">Đăng ký ngay</a></p>
+      </div>
+    
+      <div id="dangKy" class="auth-form">
+        <button type="button" class="btnDong" aria-label="Đóng">×</button>
+        <h2>Đăng ký</h2>
+        <form id="formDangKy">
+          <label for="hoTen">Họ và tên</label>
+          <input type="text" id="hoTen" placeholder="Nhập họ tên">
+    
+          <label for="dkTk">Tài khoản</label>
+          <input type="text" id="dkTk" placeholder="Tạo tài khoản">
+    
+          <label for="dkMk">Mật khẩu</label>
+          <input type="password" id="dkMk" placeholder="Tạo mật khẩu">
+    
+          <label for="nhapLaiMk">Nhập lại mật khẩu</label>
+          <input type="password" id="nhapLaiMk" placeholder="Nhập lại mật khẩu">
+    
+          <label for="sdt">Số điện thoại</label>
+          <input type="tel" id="sdt" placeholder="Ví dụ: 0912345678">
+    
+          <button type="submit" class="btnChinh">Tạo tài khoản</button>
+        </form>
+        <p>Đã có tài khoản? <a href="#" id="sangDangNhap">Đăng nhập</a></p>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="menu">
+        <ul>
+          <li><a href="">TRANG CHỦ</a></li>
+          <li><a href="gioi-thieu.html">GIỚI THIỆU</a></li>
+          <li><a href="san-pham.html">SẢN PHẨM</a>
+            <ul id="danhmuc">
+            </ul>
+          </li>
+          <li><a href="tin-tuc.html">TIN TỨC</a></li>
+          <li><a href="">LIÊN HỆ</a></li>
+        </ul>
+      </div>
+      <div class="row">
+        <div class="banner-1">
+          <img id="banner" src="./images/banner_desktop-_1920___720_px-_copy_3_884c06091927479d92871004c8c85d8f.webp"
+            alt="" />
+          <div class="btn-left" onclick="left()"><i class="fa-solid fa-angle-left"></i></div>
+          <div class="btn-right" onclick="right()"><i class="fa-solid fa-angle-right"></i></div>
+          <div class="btn">
+            <div class="btn1"></div>
+            <div class="btn1"></div>
+            <div class="btn1"></div>
+            <div class="btn1"></div>
+            <div class="btn1"></div>
+        </div>
+      </div>
+
+    </div>
+    <div class="container">
+
+
+    </div>
+
+    <div class="container">
+      <h1>SẢN PHẨM</h1>
+      <div class="row" id="show">
+
+      </div>
+      <div class="row"></div>
+
+    </div>
+
+    <div class="container">
+      <h1>Quấn áo</h1>
+      <div class="row" id="cf">
+      </div>
+      <div class="row"></div>
+    </div>
+
+    <div class="container">
+      <h1>Best Seller</h1>
+      <div class="row" id="bm">
+      </div>
+      <div class="row"></div>
+
+
+    </div>
+
+
+    <div class="container">
+      <h1>Blinb Box</h1>
+      <div class="row" id="ll">
+      </div>
+      <div class="row"></div>
+    </div>
+
+    <footer class="footer">
+      <div class="footer-container">
+
+
+        <div class="footer-column footer-policy">
+          <h3>CHÍNH SÁCH KHÁCH HÀNG</h3>
+
+          <ul>
+            <li><a href="#">Chính sách đổi hàng</a></li>
+            <li><a href="#">Hướng dẫn bảo quản</a></li>
+            <li><a href="#">Chính sách vận chuyển</a></li>
+            <li><a href="#">Chính sách bảo hành</a></li>
+            <li><a href="#">Hướng dẫn mua hàng</a></li>
+            <li><a href="#">Chính sách thanh toán</a></li>
+            <li><a href="#">Chính sách bảo mật</a></li>
+            <li><a href="#">Chính sách giá</a></li>
+            <li><a href="#">Các điều kiện và hạn chế</a></li>
+            <li><a href="#">Giải quyết khiếu nại</a></li>
+          </ul>
+        </div>
+
+
+        <div class="footer-column footer-contact">
+          <h3>LIÊN HỆ</h3>
+
+          <div class="contact-item">
+            <span>Hotline</span>
+            <a href="tel:02873003794">028 7300 3794</a>
+          </div>
+
+          <div class="contact-item">
+            <span>Mail</span>
+            <a href="mailto:business.poppophihi@gmail.com">
+              business.poppophihi@gmail.com
+            </a>
+          </div>
+
+          <div class="socials">
+            <a href="#" aria-label="Facebook">
+              <i class="fa-brands fa-facebook-f"></i>
+            </a>
+
+            <a href="#" aria-label="Instagram">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+
+            <a href="#" aria-label="TikTok">
+              <i class="fa-brands fa-tiktok"></i>
+            </a>
+          </div>
+
+          <div class="verified">
+            <div class="verified-icon">✓</div>
+            <div>
+              <strong>ĐÃ THÔNG BÁO</strong>
+              <small>THƯƠNG MẠI ĐIỆN TỬ</small>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-column footer-company">
+          <h3>THÔNG TIN DOANH NGHIỆP</h3>
+
+          <div class="company-info">
+            <p>CÔNG TY TNHH POPPOP GLOBAL</p>
+
+            <p>
+              Giấy chứng nhận đăng ký doanh nghiệp số 0319478778
+            </p>
+
+            <p>
+              Đăng ký lần đầu ngày 02/04/2026
+            </p>
+
+            <p>
+              Nơi cấp: Sở Tài chính Thành phố Hồ Chí Minh
+            </p>
+
+            <p class="address-title">Địa chỉ trụ sở:</p>
+
+            <p>
+              L18-11-13, Tầng 18, Vincom Center Đồng Khởi
+              <br>
+              72 Lê Thánh Tôn, Phường Sài Gòn, TP. Hồ Chí Minh
+            </p>
+
+            <p>
+              Hotline: <a href="tel:02873003794">028 7300 3794</a>
+            </p>
+
+            <p>
+              Email:
+              <a href="mailto:business.poppophihi@gmail.com">
+                business.poppophihi@gmail.com
+              </a>
+            </p>
+          </div>
+
+
+          <div class="brand-logos">
+            <div class="logo-round">🐼</div>
+            <div class="logo-text">Poppop</div>
+            <div class="logo-flag">Poppop</div>
+          </div>
+        </div>
+
+      </div>
+    </footer>
+
+    <script>
+      arr = ["images/banner_desktop-_1920___720_px-_copy_2_addc58b9accc4d8d8b604baf4dfb80a3.webp", "images/xxx.webp", "images/09pp_banner_desktop-_1920___720_px-_2b8cc5f1723e49afa21e0c062c61dd67.webp"];
+      let i = 0;
+      function right() {
+        document.getElementById("banner").src = arr[i];
+        i++;
+        if (i == arr.length) {
+          i = 0;
+        }
+      }
+      function left() {
+        document.getElementById("banner").src = arr[i];
+        i--;
+        if (i < 0) {
+          i = arr.length - 1;
+        }
+      }
+    </script>
+    <script src="js/code.js"></script>
+    <script src="js/index.js"></script>
+    <script>
+      for (let i = 0; i < danhmuc.length; i++) {
+        document.getElementById("danhmuc").innerHTML += `<li><a href="">${danhmuc[i]}</a></li>`
+      }
+    </script> 
+    <script>
+      function detail(i) {
+        window.location.href = `detail.html?id=${i}` // chuyển sang trang detail.html
+      }
+
+    </script>
+    <script>
+      function detail(i) {
+          window.location.href = `detail.html?id=${ds[i].id}` // chuyển sang trang detail.html
+      }
+
+  </script>
+  <script>
+    // Lấy index từ trang chủ về theo href=detail?id=${i}
+    let link = window.location.href;// Tạo một đối tượng URL từ URL hiện tại
+    let url = new URL(link);// Lấy giá trị của tham số 'i'
+    let id = url.searchParams.get("id");
+
+
+    // Chỉ chạy phần chi tiết sản phẩm nếu URL có id và trang có ảnh chi tiết.
+    if (id !== null && typeof ds !== "undefined") {
+      let item = ds.find(pt => pt.id === Number(id));
+      let detailBig = document.getElementById("detail-big");
+
+      if (item && detailBig) {
+        console.log(item.gia);
+        detailBig.src = `images/${item.hinh}`;
+      }
+    }
+    
+  </script>
+
+
+  <script>
+    $(document).ready(function () {
+      // Danh sách tài khoản chỉ lưu tạm trong bộ nhớ khi trang đang mở.
+      // Tài khoản mẫu để thử đăng nhập:
+      var taiKhoanDaDangKy = [
+        { hoTen: "Quản trị viên", tk: "admin", mk: "123456", sdt: "0912345678" }
+      ];
+    
+      function moForm(id) {
+        $("#login, #dangKy").hide();
+        $("#authOverlay").fadeIn(150);
+        $(id).fadeIn(150);
+      }
+    
+      function dongForm() {
+        $("#authOverlay").fadeOut(150);
+      }
+    
+      $("#btnMoLogin").click(function () {
+        moForm("#login");
+      });
+    
+      $("#btnMoDangKy, #sangDangKy").click(function (e) {
+        e.preventDefault();
+        moForm("#dangKy");
+      });
+    
+      $("#sangDangNhap").click(function (e) {
+        e.preventDefault();
+        moForm("#login");
+      });
+    
+      $(".btnDong").click(function () {
+        dongForm();
+      });
+    
+      $("#authOverlay").click(function (e) {
+        if (e.target === this) dongForm();
+      });
+    
+      $("#formDangKy").submit(function (e) {
+        e.preventDefault();
+    
+        var hoTen = $("#hoTen").val().trim();
+        var tk = $("#dkTk").val().trim();
+        var mk = $("#dkMk").val();
+        var nhapLaiMk = $("#nhapLaiMk").val();
+        var sdt = $("#sdt").val().trim();
+    
+        if (!hoTen || !tk || !mk || !nhapLaiMk || !sdt) {
+          alert("Vui lòng nhập đầy đủ thông tin!");
+          return;
+        }
+    
+        if (mk.length < 6) {
+          alert("Mật khẩu phải có ít nhất 6 ký tự!");
+          return;
+        }
+    
+        if (mk !== nhapLaiMk) {
+          alert("Mật khẩu nhập lại không khớp!");
+          return;
+        }
+    
+        if (!/^[0-9]{10,11}$/.test(sdt)) {
+          alert("Số điện thoại phải gồm 10 hoặc 11 chữ số!");
+          return;
+        }
+    
+        var trungTaiKhoan = taiKhoanDaDangKy.some(function (item) {
+          return item.tk.toLowerCase() === tk.toLowerCase();
+        });
+    
+        if (trungTaiKhoan) {
+          alert("Tài khoản này đã tồn tại!");
+          return;
+        }
+    
+        taiKhoanDaDangKy.push({
+          hoTen: hoTen,
+          tk: tk,
+          mk: mk,
+          sdt: sdt
+        });
+    
+        alert("Đăng ký thành công! Mời bạn đăng nhập.");
+        $("#loginTk").val(tk);
+        $("#loginMk").val("");
+        $("#formDangKy")[0].reset();
+        moForm("#login");
+      });
+    
+      $("#formLogin").submit(function (e) {
+        e.preventDefault();
+    
+        var tk = $("#loginTk").val().trim();
+        var mk = $("#loginMk").val();
+    
+        if (!tk || !mk) {
+          alert("Vui lòng nhập tài khoản và mật khẩu!");
+          return;
+        }
+    
+        var taiKhoan = taiKhoanDaDangKy.find(function (item) {
+          return item.tk.toLowerCase() === tk.toLowerCase() && item.mk === mk;
+        });
+    
+        if (taiKhoan) {
+          alert("Đăng nhập thành công! Xin chào " + taiKhoan.hoTen + "!");
+          dongForm();
+          $("#formLogin")[0].reset();
+        } else {
+          alert("Sai tài khoản hoặc mật khẩu!");
+        }
+      });
+    });
+    </script>
+    
+  </body>
+
+  </html>
